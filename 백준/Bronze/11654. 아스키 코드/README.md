@@ -22,3 +22,23 @@
 
  <p>입력으로 주어진 글자의 아스키 코드 값을 출력한다.</p>
 
+### 메모
+```
+/*
+Scanner 사용 X
+- System.in 은 byte 값으로 문자 한 개만 읽으면서 해당 문자에 대응되는 아스키코드 값을 저장할 수 있다.
+- 예외 처리를 꼭 해주어야 한다.
+*/
+public class Main {
+    public static void main(String[] args) throws IOException {
+        int input = System.in.read();
+        System.out.println(input);
+    }
+}
+```
+```   
+// Scanner 사용
+Scanner sc = new Scanner(System.in);
+int input = sc.next().charAt(0);
+System.out.println(input);
+```
