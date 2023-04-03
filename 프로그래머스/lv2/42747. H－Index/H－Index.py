@@ -5,5 +5,9 @@ def solution(citations):
     for idx, citation in enumerate(citations):
         if idx >= citation:
             return idx
-        
-    return idx+1
+    return len(citations) # idx+1 도 가능
+    
+# return idx만 하면 idx보다 큰 citation이 있을 때 None이 출력된다
+print(solution([5, 5, 5, 5, 5])) #None 출력
+print(solution([5, 10, 20, 30, 40])) #None 출력
+print(solution([88, 89])) #None 출력
