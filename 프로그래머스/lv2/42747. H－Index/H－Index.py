@@ -5,4 +5,5 @@ def solution(citations):
     for idx, citation in enumerate(citations):
         if idx >= citation:
             return idx
-    return len(citations)
+        
+    return idx+1
