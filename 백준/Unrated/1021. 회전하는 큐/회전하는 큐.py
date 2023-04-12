@@ -25,4 +25,8 @@ for i in position:
                     deque.appendleft(deque.pop())
                     cnt += 1
 print(cnt)            
-            
+"""
+rotate 함수
+deque.rotate(-x) // 왼쪽으로 x만큼 이동한다
+deque.rotate(x) // 오른쪽으로 x만큼 이동한다
+"""
