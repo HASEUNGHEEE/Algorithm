@@ -28,5 +28,5 @@ for i in range(t):
         x, y = map(int, input().split())
         location.append([x, y])
     end = [int(x) for x in input().split()]
-    visited = [0 for i in range(n+1)] #home 제외
+    visited = [0] * n
     bfs()
