@@ -11,15 +11,15 @@ def bfs(x1, y1, x2, y2):
     q.append([x1, y1])
     graph[x1][y1] = 1
     while q:
-        x1, y1 = q.popleft()
-        if x1 == x2 and y1 == y2:
-            return graph[x1][y1] - 1
+        x, y = q.popleft()
+        if x == x2 and y == y2:
+            return graph[x][y] - 1
         for i in range(8):
-            nx = x1 + dx[i]
-            ny = y1 + dy[i]
+            nx = x + dx[i]
+            ny = y + dy[i]
             if 0 <= nx < l and 0 <= ny < l and graph[nx][ny] == 0:
                 q.append([nx, ny])
-                graph[nx][ny] = graph[x1][y1] + 1
+                graph[nx][ny] = graph[x][y] + 1
 
 # 입력
 input = sys.stdin.readline
