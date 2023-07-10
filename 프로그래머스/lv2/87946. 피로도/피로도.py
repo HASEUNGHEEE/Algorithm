@@ -1,6 +1,6 @@
 from itertools import permutations
 def solution(k, dungeons):
-    count = []
+    answer = 0
     
     for per in permutations(dungeons, len(dungeons)):
         new_k = k
@@ -9,6 +9,6 @@ def solution(k, dungeons):
             if new_k >= i[0]:
                 new_k -= i[1]
                 cnt += 1
-        count.append(cnt)
+        answer = max(answer, cnt)
     
-    return max(count)
+    return answer
