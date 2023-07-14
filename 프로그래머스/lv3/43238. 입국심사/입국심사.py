@@ -1,3 +1,4 @@
+"""
 import sys
 
 def solution(n, times):
@@ -29,7 +30,32 @@ def passed(times, n, mid):
     if amount >= n: return True
     else: return False
     
+"""
+
+# function 분리하지 않고도 solution 함수 안에서 다 해결할 수 있다.
+# 주석 안에 있는 코드와 같은 로직
+
+def solution(n, times):
+    answer = 0
+    times = sorted(times)
+    left, right, mid = 1, times[-1] * n, 0
+
+    while left <= right:
+        mid = (left + right) // 2
+        amount = 0
+        for time in times:
+            amount += mid // time
+
+        if amount >= n:
+            right = mid - 1
+        else:
+            left = mid + 1
     
+    answer = left
+    return answer
 
 
 
+
+    
+    
