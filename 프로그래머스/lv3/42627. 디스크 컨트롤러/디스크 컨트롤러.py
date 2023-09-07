@@ -1,11 +1,12 @@
 import heapq as hq
 def solution(jobs):
     answer, time, cnt = 0, 0, 0
-    length = len(jobs)
+    leng = len(jobs)
     heap = []
     jobs.sort()
-    
-    while cnt < length:
+    print(len(jobs))
+    print(leng)
+    while cnt < len(jobs):
         while len(jobs) > 0:
             if jobs[0][0] <= time:
                 hq.heappush(heap, jobs.pop(0)[::-1]) # [소요시간, 요청시점] 순으로 힙에 push
@@ -19,6 +20,6 @@ def solution(jobs):
         else:
             time += 1
     
-    return answer // length # 소수점 이하의 수 버림
+    return answer // leng # 소수점 이하의 수 버림
 
 
